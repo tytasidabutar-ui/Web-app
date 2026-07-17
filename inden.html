@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Calysta | Sophisticated Digitalist Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#00315d",
+                        "outline": "#8b919d",
+                        "inverse-surface": "#dce1fb",
+                        "on-background": "#dce1fb",
+                        "surface-container-highest": "#2e3447",
+                        "on-secondary-container": "#9db2ff",
+                        "primary": "#a4c9ff",
+                        "on-primary-fixed": "#001c39",
+                        "surface-container-low": "#151b2d",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#264191",
+                        "tertiary-container": "#d19900",
+                        "on-primary-fixed-variant": "#004883",
+                        "surface-variant": "#2e3447",
+                        "on-error": "#690005",
+                        "surface-bright": "#33394c",
+                        "on-surface": "#dce1fb",
+                        "secondary-container": "#264191",
+                        "on-tertiary-fixed": "#261900",
+                        "tertiary-fixed": "#ffdea4",
+                        "inverse-on-surface": "#2a3043",
+                        "tertiary-fixed-dim": "#fabd34",
+                        "primary-fixed": "#d4e3ff",
+                        "secondary-fixed-dim": "#b6c4ff",
+                        "surface-container-high": "#23293c",
+                        "background": "#0c1324",
+                        "on-secondary": "#05297a",
+                        "on-tertiary-fixed-variant": "#5d4200",
+                        "on-tertiary": "#412d00",
+                        "on-surface-variant": "#c1c7d3",
+                        "surface": "#0c1324",
+                        "tertiary": "#fabd34",
+                        "secondary": "#b6c4ff",
+                        "outline-variant": "#414751",
+                        "on-secondary-fixed": "#00164e",
+                        "surface-tint": "#a4c9ff",
+                        "surface-dim": "#0c1324",
+                        "surface-container-lowest": "#070d1f",
+                        "on-primary-container": "#003a6b",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "secondary-fixed": "#dce1ff",
+                        "primary-container": "#60a5fa",
+                        "on-tertiary-container": "#4b3500",
+                        "surface-container": "#191f31",
+                        "primary-fixed-dim": "#a4c9ff",
+                        "inverse-primary": "#0060ac"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "container-max": "1200px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "xl": "80px",
+                        "sm": "12px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Poppins"],
+                        "headline-md": ["Poppins"],
+                        "body-md": ["Poppins"],
+                        "display-lg": ["Poppins"],
+                        "body-lg": ["Poppins"],
+                        "label-md": ["Poppins"],
+                        "display-lg-mobile": ["Poppins"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #020617;
+            color: #dce1fb;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px -15px rgba(30, 58, 138, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .glow-orb {
+            position: absolute;
+            filter: blur(120px);
+            z-index: -1;
+            opacity: 0.4;
+            border-radius: 9999px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .timeline-line {
+            background: linear-gradient(to bottom, #60a5fa, transparent);
+        }
+    </style>
+</head>
+<body class="selection:bg-primary/30">
+<!-- Background Orbs -->
+<div class="glow-orb bg-primary w-[500px] h-[500px] -top-64 -left-64"></div>
+<div class="glow-orb bg-secondary w-[400px] h-[400px] bottom-0 -right-32"></div>
+<!-- Header (TopNavBar) -->
+<header class="fixed top-0 w-full z-50 bg-surface/40 backdrop-blur-xl border-b border-white/10 shadow-[0_10px_30px_-15px_rgba(30,58,138,0.2)]">
+<nav class="flex justify-between items-center max-w-container-max mx-auto px-md py-sm">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">Calysta</div>
+<div class="hidden md:flex gap-lg items-center font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#about">About</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#journey">Journey</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#showcase">Showcase</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#skills">Skills</a>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-md py-xs rounded-lg active:scale-95 duration-200 hover:bg-white/5 transition-all">
+                Contact
+            </button>
+</nav>
+</header>
+<main class="relative">
+<!-- Hero Section -->
+<section class="min-h-screen flex items-center justify-center pt-xl px-md overflow-hidden bg-gradient-to-b from-[#020617] to-background">
+<div class="max-w-container-max w-full grid grid-cols-1 md:grid-cols-2 gap-lg items-center">
+<div class="order-2 md:order-1 space-y-md reveal active">
+<h2 class="text-primary font-label-md text-label-md tracking-widest">HALO, SAYA CALYSTA</h2>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg leading-tight">
+                        Student • Future <span class="text-primary">Front-End</span> Developer
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                        Learning one line of code at a time. Crafting digital experiences with precision and passion.
+                    </p>
+<div class="flex flex-wrap gap-base pt-md">
+<button class="bg-gradient-to-r from-primary to-secondary text-on-primary px-lg py-sm rounded-lg font-label-md text-label-md hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95">
+                            About Me
+                        </button>
+<button class="glass-card px-lg py-sm rounded-lg font-label-md text-label-md text-white hover:bg-white/10 active:scale-95">
+                            My Journey
+                        </button>
+</div>
+</div>
+<div class="order-1 md:order-2 flex justify-center md:justify-end reveal active">
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-2 border-primary/30 overflow-hidden ring-8 ring-background">
+<img alt="Calysta Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLfelclebn_7xro4djt3jMgyecTdlrcrg4c2aqVtDsNl3V_7Vzqkj0S4MLa9oQLTTa9ZppRU_mGWn7WMRd7sEjND8ZU7Et6JJOY6yF9xv_kYcpcfljlLPumrZGZoL1wNd-mfgO0WrRQNqFmbfstsdBJsGxi9KKlGcmBWg6eQAop20Zp2NDgoXy5nYqL2jsWN10wnmIDfBkiaQAfLabLB8RRNoipeq3X5G-okFCUpN2POIxe9T7orqo"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Me Section -->
+<section class="py-xl px-md reveal" id="about">
+<div class="max-w-container-max mx-auto">
+<div class="glass-card p-lg rounded-2xl md:flex gap-lg items-center">
+<div class="md:w-1/3 space-y-sm mb-md md:mb-0">
+<div class="inline-flex items-center gap-xs text-primary px-sm py-xs bg-primary/10 rounded-full">
+<span class="material-symbols-outlined text-[20px]">person</span>
+<span class="text-label-md font-label-md">Identity</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg">Nama: Calysta</h3>
+<p class="text-on-surface-variant font-body-md text-body-md italic">Role: Mafia</p>
+<p class="text-primary font-bold">Status: Siswa SMA</p>
+</div>
+<div class="md:w-2/3 space-y-md">
+<p class="font-body-lg text-body-lg leading-relaxed">
+                            Saat ini saya sedang mempelajari <span class="text-primary font-semibold">HTML &amp; CSS</span> sebagai langkah awal menjadi seorang Front-End Developer. Saya senang mencoba hal-hal baru dan mengeksplorasi kreativitas melalui baris kode.
+                        </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-base">
+<div class="flex flex-col items-center p-sm glass-card rounded-xl text-center">
+<span class="material-symbols-outlined text-primary mb-xs">school</span>
+<span class="text-label-md font-label-md">Student</span>
+</div>
+<div class="flex flex-col items-center p-sm glass-card rounded-xl text-center">
+<span class="material-symbols-outlined text-primary mb-xs">code</span>
+<span class="text-label-md font-label-md">HTML</span>
+</div>
+<div class="flex flex-col items-center p-sm glass-card rounded-xl text-center">
+<span class="material-symbols-outlined text-primary mb-xs">css</span>
+<span class="text-label-md font-label-md">CSS</span>
+</div>
+<div class="flex flex-col items-center p-sm glass-card rounded-xl text-center">
+<span class="material-symbols-outlined text-primary mb-xs">rocket_launch</span>
+<span class="text-label-md font-label-md">Learning</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Learning Journey Section -->
+<section class="py-xl px-md bg-surface-container-lowest/30 reveal" id="journey">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg mb-sm">My Learning Journey</h2>
+<p class="text-on-surface-variant font-body-md text-body-md max-w-2xl mx-auto">Evolusi pembelajaran saya dari baris pertama hingga implementasi desain responsif.</p>
+</div>
+<div class="relative">
+<!-- Vertical Line -->
+<div class="absolute left-1/2 -translate-x-1/2 w-1 h-full timeline-line rounded-full hidden md:block"></div>
+<div class="space-y-lg">
+<!-- Step 1 -->
+<div class="relative flex flex-col md:flex-row items-center md:justify-between group">
+<div class="hidden md:block w-5/12 text-right pr-lg">
+<span class="text-primary font-bold text-headline-md">2026</span>
+</div>
+<div class="z-10 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary ring-8 ring-background mb-base md:mb-0">
+<span class="material-symbols-outlined">start</span>
+</div>
+<div class="w-full md:w-5/12 pl-0 md:pl-lg">
+<div class="glass-card p-md rounded-2xl">
+<h4 class="font-headline-sm text-[20px] mb-xs">Mulai belajar HTML</h4>
+<p class="text-on-surface-variant font-body-md">Mempelajari struktur dasar web, elemen, dan atribut dasar.</p>
+</div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative flex flex-col md:flex-row-reverse items-center md:justify-between group">
+<div class="hidden md:block w-5/12 text-left pl-lg">
+<span class="text-primary font-bold text-headline-md">Q1</span>
+</div>
+<div class="z-10 w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-on-secondary ring-8 ring-background mb-base md:mb-0">
+<span class="material-symbols-outlined">palette</span>
+</div>
+<div class="w-full md:w-5/12 pr-0 md:pr-lg">
+<div class="glass-card p-md rounded-2xl text-right md:text-left">
+<h4 class="font-headline-sm text-[20px] mb-xs">Belajar CSS</h4>
+<p class="text-on-surface-variant font-body-md">Mengeksplorasi styling, layouting dengan Flexbox dan Grid.</p>
+</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative flex flex-col md:flex-row items-center md:justify-between group">
+<div class="hidden md:block w-5/12 text-right pr-lg">
+<span class="text-primary font-bold text-headline-md">Q2</span>
+</div>
+<div class="z-10 w-12 h-12 rounded-full bg-tertiary flex items-center justify-center text-on-tertiary ring-8 ring-background mb-base md:mb-0">
+<span class="material-symbols-outlined">web</span>
+</div>
+<div class="w-full md:w-5/12 pl-0 md:pl-lg">
+<div class="glass-card p-md rounded-2xl">
+<h4 class="font-headline-sm text-[20px] mb-xs">Membuat Landing Page</h4>
+<p class="text-on-surface-variant font-body-md">Implementasi pertama ke dalam proyek real-world sederhana.</p>
+</div>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="relative flex flex-col md:flex-row-reverse items-center md:justify-between group">
+<div class="hidden md:block w-5/12 text-left pl-lg">
+<span class="text-primary font-bold text-headline-md">Q3</span>
+</div>
+<div class="z-10 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary ring-8 ring-background mb-base md:mb-0">
+<span class="material-symbols-outlined">account_circle</span>
+</div>
+<div class="w-full md:w-5/12 pr-0 md:pr-lg">
+<div class="glass-card p-md rounded-2xl text-right md:text-left">
+<h4 class="font-headline-sm text-[20px] mb-xs">Membuat Portfolio</h4>
+<p class="text-on-surface-variant font-body-md">Membangun branding diri melalui portfolio digital ini.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Learning Showcase (Slider) -->
+<section class="py-xl px-md overflow-hidden reveal" id="showcase">
+<div class="max-w-container-max mx-auto mb-lg">
+<h2 class="font-headline-lg text-headline-lg">My Learning Result</h2>
+<p class="text-on-surface-variant font-body-md text-body-md">Berikut adalah beberapa hasil pembelajaran HTML &amp; CSS saya.</p>
+</div>
+<div class="flex overflow-x-auto gap-md scrollbar-hide px-md pb-md">
+<!-- Project 1 -->
+<div class="flex-none w-[300px] md:w-[400px]">
+<div class="glass-card h-full rounded-2xl overflow-hidden group">
+<div class="h-48 bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A clean, professional landing page design for a fictional tech company. The design features a dark navy and primary blue color palette, with glassmorphism sections, modern typography, and a prominent call-to-action button. The layout is minimalist and follows a sophisticated digitalist aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGlcTcrOpIZ4TkZ3f6p9m3wHkPK5rvMrKlW6LzIVnnEayGp03bEwZEnC0NUP_4WJYjSak-aIwrXqIa6pnMPOgJu8iC7GeOAiBgXs0IFIlyVTpBCq_gjoynUIsqznQg33cxygHiuZ6wpclLzBmgH31C8d_22NJ7YqJPRktCXZ4ofu736mpj7xXJoKq9h3ls7oosDXogxYtM-ycclds36-KY4LD1mw5OY-R2n_hbJrYTVD9pbxfSospt')"></div>
+</div>
+<div class="p-md">
+<span class="text-primary font-label-md text-label-md mb-xs block">Project 1</span>
+<h4 class="font-headline-md text-headline-md mb-sm">Landing Page</h4>
+<p class="text-on-surface-variant font-body-md line-clamp-2">Sebuah landing page statis yang dibangun menggunakan struktur HTML semantik.</p>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="flex-none w-[300px] md:w-[400px]">
+<div class="glass-card h-full rounded-2xl overflow-hidden group">
+<div class="h-48 bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A sleek and modern login page UI with a glassmorphism container centered on a dark background. The form includes stylish input fields with subtle blue outlines and a vibrant gradient login button. The overall mood is high-tech and secure, consistent with a modern portfolio style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvCjGNTQTXZEMVfZB0jziCZZVkxKJ8dttjscISlMIxf_ahMkFaJ3WY_Yp3gjBVM0iWxCBOVrbBgAL-yX3Le9qREjDMdfydgcJjOZKS3pgu-mtGaKPaZMZyeWVQ_E_95XiALzjggjzekiYw5dBkbw3JxGPSNDZAXV5RTJuW47befP8PqwdYF9p-wMFIUhH9ORmCHrOYrTvJHVJOPyrAVjYx4B7tcU4AelrglZFeftdO-reGA4PvnXX_')"></div>
+</div>
+<div class="p-md">
+<span class="text-primary font-label-md text-label-md mb-xs block">Project 2</span>
+<h4 class="font-headline-md text-headline-md mb-sm">Simple Login Page</h4>
+<p class="text-on-surface-variant font-body-md line-clamp-2">Latihan styling form dan input field dengan efek fokus modern.</p>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="flex-none w-[300px] md:w-[400px]">
+<div class="glass-card h-full rounded-2xl overflow-hidden group">
+<div class="h-48 bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A minimalist profile card design featuring a circular avatar placeholder, social media icons, and a brief bio. The card uses translucent glass layers and a soft navy shadow, creating a floating effect. The background has subtle glowing orbs in blue and navy." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCgkWGZKiuSoG3L2P1LQydaPfRpJoxHcZlO8yO7WdXRCAVn5hR0r_UZqEjRq4wzmqCvL4PAXTCpY8vH2AyMLsHyXaEDyYYKhlx0h6JyKEjB5Vc_DX-30PAbFhkVknxgRUibIofyu6J3rbivjBGfRM3HyIRaOg7oAkjCSUgA_O40BsKHYkPi6QFK1EjwkV_GycMy4pKtW2-3AdWjtKkVRI-JWCut9rxjlAGU1aemsOccX38BdIFCRBy_')"></div>
+</div>
+<div class="p-md">
+<span class="text-primary font-label-md text-label-md mb-xs block">Project 3</span>
+<h4 class="font-headline-md text-headline-md mb-sm">Profile Card</h4>
+<p class="text-on-surface-variant font-body-md line-clamp-2">Komponen kartu profil responsif dengan interaksi hover menarik.</p>
+</div>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="flex-none w-[300px] md:w-[400px]">
+<div class="glass-card h-full rounded-2xl overflow-hidden group">
+<div class="h-48 bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A sophisticated restaurant website homepage design. It features high-quality food photography backgrounds, an elegant menu layout with price tags, and a glassmorphism reservation form. The design uses warm accents against the primary dark navy theme for a premium feel." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBcMz8cVR-R9oSpUGyVxyrKq1Z71rMXFZdFy3h7Fe77npXm1TzAhYkolq_GhiUeASLZJG7rKznK2McsnWs8rEKTHnW4dk26ce9sfC3H29ZMHe6xJc8Nnc8tkrNCqfVwJW-Q0uI7GeGw_Z09rvT4Mtzp-YKPngkzogPp1tQw9kG0ASdhx7STnTQx73vdmWHdDqdJKEF33HjQrB8OLer6-_6Oxl9ebWEHTJmmxdDMaYcs4H7SqSeM7UFI')"></div>
+</div>
+<div class="p-md">
+<span class="text-primary font-label-md text-label-md mb-xs block">Project 4</span>
+<h4 class="font-headline-md text-headline-md mb-sm">Restaurant Website</h4>
+<p class="text-on-surface-variant font-body-md line-clamp-2">Website multi-halaman sederhana untuk eksplorasi menu dan layouting.</p>
+</div>
+</div>
+</div>
+<!-- Project 5 -->
+<div class="flex-none w-[300px] md:w-[400px]">
+<div class="glass-card h-full rounded-2xl overflow-hidden group">
+<div class="h-48 bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A full view of a modern personal portfolio website. The layout is asymmetric and uses a grid of glassmorphism cards to display work. The overall aesthetic is clean, professional, and tech-forward, with vibrant blue accents and deep navy backgrounds." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBMXUsC5yFgWnta4CdyhTfXMJE0sRY1bCvc1iVU4D8EytQMbDf7urQwE3utGZylYyf-T8Y_Jl3TgalBjhX8bvIl7NHge53e-XxzjxjliyrN4SxiJvHRUIcGlDrT5zFweUmVIiXYKMgH7ktTZa1pzb1m6-l2aqmpy534oqXD2cy-gpJBuAXdvbSy1kUmcbVHbzDwwSwaukp_Hddf24BDig8hJsom5W2xAh88pIrnqLLhcj0p2_z9e1sp')"></div>
+</div>
+<div class="p-md">
+<span class="text-primary font-label-md text-label-md mb-xs block">Project 5</span>
+<h4 class="font-headline-md text-headline-md mb-sm">Portfolio Website</h4>
+<p class="text-on-surface-variant font-body-md line-clamp-2">Website portfolio pribadi lengkap yang sedang Anda lihat sekarang.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="py-xl px-md reveal" id="skills">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-sm">Technical Proficiency</h2>
+<p class="text-on-surface-variant font-body-md text-body-md mb-lg">Representasi visual tingkat kemajuan saya dalam mempelajari fundamental web development.</p>
+<div class="space-y-md">
+<div class="space-y-xs">
+<div class="flex justify-between font-label-md text-label-md">
+<span>HTML</span>
+<span>80%</span>
+</div>
+<div class="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 80%"></div>
+</div>
+</div>
+<div class="space-y-xs">
+<div class="flex justify-between font-label-md text-label-md">
+<span>CSS</span>
+<span>70%</span>
+</div>
+<div class="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 70%"></div>
+</div>
+</div>
+<div class="space-y-xs">
+<div class="flex justify-between font-label-md text-label-md">
+<span>Responsive Design</span>
+<span>50%</span>
+</div>
+<div class="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 50%"></div>
+</div>
+</div>
+<div class="space-y-xs">
+<div class="flex justify-between font-label-md text-label-md">
+<span>Design Principles</span>
+<span>60%</span>
+</div>
+<div class="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 60%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="glass-card p-lg rounded-2xl">
+<h3 class="font-headline-md text-headline-md mb-md">Future Goals</h3>
+<div class="space-y-md">
+<div class="flex items-center gap-md">
+<div class="w-6 h-6 rounded bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<span class="font-body-md text-body-md">Menguasai HTML</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-6 h-6 rounded bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<span class="font-body-md text-body-md">Menguasai CSS</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-6 h-6 rounded border border-white/20 flex items-center justify-center text-transparent">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">Belajar JavaScript</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-6 h-6 rounded border border-white/20 flex items-center justify-center text-transparent">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">Belajar React</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-6 h-6 rounded border border-white/20 flex items-center justify-center text-transparent">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">Menjadi Front-End Developer</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-xl px-md reveal" id="contact">
+<div class="max-w-container-max mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg mb-sm">Get In Touch</h2>
+<p class="text-on-surface-variant font-body-md text-body-md mb-lg max-w-2xl mx-auto">Tertarik untuk berkolaborasi atau sekadar bertanya? Hubungi saya melalui media di bawah ini.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<a class="glass-card p-lg rounded-2xl flex flex-col items-center group" href="mailto:your@email.com">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">mail</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-xs">Email</h4>
+<p class="text-on-surface-variant font-body-md">your@email.com</p>
+</a>
+<a class="glass-card p-lg rounded-2xl flex flex-col items-center group" href="https://instagram.com/username" target="_blank">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">camera_alt</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-xs">Instagram</h4>
+<p class="text-on-surface-variant font-body-md">@username</p>
+</a>
+<a class="glass-card p-lg rounded-2xl flex flex-col items-center group" href="https://github.com/username" target="_blank">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">code</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-xs">GitHub</h4>
+<p class="text-on-surface-variant font-body-md">github.com/username</p>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-lg border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-md gap-base">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">Calysta</div>
+<p class="font-label-md text-label-md text-outline">© 2026 Calysta | Made with HTML &amp; CSS</p>
+<div class="flex gap-md font-label-md text-label-md">
+<a class="text-outline hover:text-primary transition-colors" href="#">Email</a>
+<a class="text-outline hover:text-primary transition-colors" href="#">GitHub</a>
+<a class="text-outline hover:text-primary transition-colors" href="#">Instagram</a>
+</div>
+</div>
+</footer>
+<script>
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        reveal(); // Initial check
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body></html>
